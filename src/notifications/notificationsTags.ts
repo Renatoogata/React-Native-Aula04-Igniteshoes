@@ -1,6 +1,6 @@
 import OneSignal from "react-native-onesignal";
 
-export function tagUserInfoCreate() { // criar uma tag com a chave user_email no dashboard da onesignal
+export function tagUserInfoCreate() { // criar um objeto de tags com as chaves user_email no dashboard da onesignal
     OneSignal.sendTags({
         'user_name': 'Renato',
         'user_email': 'renato@teste.com',

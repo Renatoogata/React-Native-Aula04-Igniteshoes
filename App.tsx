@@ -12,14 +12,14 @@ import { tagUserInfoCreate } from './src/notifications/notificationsTags';
 
 import { CartContextProvider } from './src/contexts/CartContext';
 
-OneSignal.setAppId(process.env.ONE_SIGNAL_ID || "Wrong key");
+OneSignal.setAppId(process.env.ONE_SIGNAL_ID || "Wrong key"); // setando a key do onesignal para sincrionizar com o app
 
-// OneSignal.setEmail('renato@teste.com');
+OneSignal.promptForPushNotificationsWithUserResponse();
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
-  tagUserInfoCreate();
+  tagUserInfoCreate(); // chamando a função que cria um objeto de tags que vai ser salvo na dashboard do onesignal
 
   return (
     <NativeBaseProvider theme={THEME}>
