@@ -35,7 +35,7 @@ export function Routes() {
       {
         notification?.title &&
         <Notification // componente de notificação que irá utilizar o oneSignal
-          title={notification.title} // pegando o titulo dentro do estado que está salvo todo conteudo da notificação
+          data={notification} // pegando o titulo dentro do estado que está salvo todo conteudo da notificação
           onClose={() => setNotification(undefined)} // passando função que deixa o estado undefined quando ativada (para fechar o popup de notificação)
         />
       }
