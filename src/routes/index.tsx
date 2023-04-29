@@ -41,7 +41,7 @@ export function Routes() {
       productId: '7'
     }
   });
-  console.log(deepLinking);
+  //console.log(deepLinking);
 
 
   // a estrutura de notificação está aqui no contexto de rotas para poder reindirecionar o usuário para alguma rota com a notificação
