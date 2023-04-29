@@ -4,7 +4,6 @@ export function tagUserInfoCreate() { // criar um objeto de tags com as chaves u
     OneSignal.sendTags({
         'user_name': 'Renato',
         'user_email': 'renato@teste.com',
-        'teste': 'teste',
     })
 }
 
