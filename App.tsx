@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 
 import { StatusBar } from 'react-native';
 import OneSignal from 'react-native-onesignal';
@@ -20,6 +21,24 @@ export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
   tagUserInfoCreate(); // chamando a função que cria um objeto de tags que vai ser salvo na dashboard do onesignal
+
+  useEffect(() => {
+    const unsubscrible = OneSignal.setNotificationOpenedHandler((response) => { // com essa chama nós conseguimos saber se o usuário clicou na notifição em background
+
+      const { actionId } = response.action as any // esse actionId vem no corpo da requisição acima e tem os dados do 'Android Action Button' da push notification do OneSignal
+
+      switch (actionId) {
+        case '1':
+          return console.log('Ver todas');
+        case '2':
+          return console.log('Ver pedido')
+        default:
+          return console.log('Não foi clicado em botão de ação')
+      }
+    })
+
+    return () => unsubscrible
+  }, [])
 
   return (
     <NativeBaseProvider theme={THEME}>
