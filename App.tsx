@@ -13,7 +13,9 @@ import { tagUserInfoCreate } from './src/notifications/notificationsTags';
 
 import { CartContextProvider } from './src/contexts/CartContext';
 
-OneSignal.setAppId(process.env.ONE_SIGNAL_ID || "Wrong key"); // setando a key do onesignal para sincrionizar com o app
+import { ONE_SIGNAL_ID } from '@env'
+
+OneSignal.setAppId(ONE_SIGNAL_ID); // setando a key do onesignal para sincrionizar com o app
 
 OneSignal.promptForPushNotificationsWithUserResponse();
 
