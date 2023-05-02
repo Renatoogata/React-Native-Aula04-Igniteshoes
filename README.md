@@ -49,8 +49,18 @@ In this app i've learned how to use firebase and one signal to make push notific
 ```
 
 ```bash
-    # Connect Android device
-    $ expo start
+    # Run Prebuild
+    $ npx expo prebuild
+```
+
+```bash
+    # Run Android
+    $ npx expo run:android
+```
+
+```bash
+    # Run with Expo
+    $ npx expo start --dev-client
 ```
 
 <br />
